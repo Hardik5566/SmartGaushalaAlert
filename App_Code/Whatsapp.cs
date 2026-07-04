@@ -14,7 +14,7 @@ namespace Reminder.App_Code
     {
         private const string API_BASE_URL = "https://whatsapp.hlgroups.in";
         private const string API_KEY = "my_secret_key_123"; // Your working API key
-        private const string DEVICE_ID = "919558001712"; // Your device ID
+        private const string DEVICE_ID = "919988448255"; // Your device ID
 
         /// <summary>
         /// Send bulk message to multiple numbers

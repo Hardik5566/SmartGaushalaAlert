@@ -18,8 +18,32 @@ namespace Reminder.App_Code
             return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FCM_Notification.json");
         }
 
+        private static string GetUserName(DataRow row)
+        {
+            if (!row.Table.Columns.Contains("user_name"))
+                return string.Empty;
+
+            string value = row.Field<string>("user_name");
+            return string.IsNullOrWhiteSpace(value) ? string.Empty : value.Trim();
+        }
+
+        private static string GetPersonalizedGreeting(string userName, string language)
+        {
+            if (string.IsNullOrWhiteSpace(userName))
+                return string.Empty;
+
+            if (language == "GUJ")
+                return "નમસ્તે " + userName + "," + Environment.NewLine + Environment.NewLine;
+
+            if (language == "HIN")
+                return "नमस्ते " + userName + "," + Environment.NewLine + Environment.NewLine;
+
+            return "Hello " + userName + "," + Environment.NewLine + Environment.NewLine;
+        }
+
         private static void SendWhatsAppMessages(Dictionary<string, string> groupedMessages)
         {
+            bool isFirstMessage = true;
             foreach (var entry in groupedMessages)
             {
                 try
@@ -27,6 +51,10 @@ namespace Reminder.App_Code
                     if (string.IsNullOrWhiteSpace(entry.Key) || string.IsNullOrWhiteSpace(entry.Value))
                         continue;
 
+                    if (!isFirstMessage)
+                        System.Threading.Thread.Sleep(3000);
+
+                    isFirstMessage = false;
                     Whatsapp.send_text(entry.Key, entry.Value);
                 }
                 catch (Exception ex)
@@ -88,7 +116,9 @@ namespace Reminder.App_Code
                         foreach (var group in mobileGroups)
                         {
                             string mobile = group.Key;
-                            string language = group.First().Field<string>("lang"); // e.g., "gu", "en", "hi"
+                            DataRow firstRow = group.First();
+                            string language = firstRow.Field<string>("lang"); // e.g., "gu", "en", "hi"
+                            string userName = GetUserName(firstRow);
 
                             var animalList = group.Select(r => new
                             {
@@ -98,6 +128,7 @@ namespace Reminder.App_Code
                             }).ToList();
 
                             StringBuilder messageBuilder = new StringBuilder();
+                            messageBuilder.Append(GetPersonalizedGreeting(userName, language));
 
                             // Build message based on language
                             if (language == "GUJ") // Gujarati
@@ -193,7 +224,9 @@ namespace Reminder.App_Code
                         foreach (var group in mobileGroups)
                         {
                             string mobile = group.Key;
-                            string language = group.First().Field<string>("lang"); // e.g., "gu", "en", "hi"
+                            DataRow firstRow = group.First();
+                            string language = firstRow.Field<string>("lang"); // e.g., "gu", "en", "hi"
+                            string userName = GetUserName(firstRow);
 
                             var animalList = group.Select(r => new
                             {
@@ -202,6 +235,7 @@ namespace Reminder.App_Code
                             }).ToList();
 
                             StringBuilder messageBuilder = new StringBuilder();
+                            messageBuilder.Append(GetPersonalizedGreeting(userName, language));
 
                             // Build message based on language
                             if (language == "GUJ") // Gujarati
@@ -296,11 +330,14 @@ namespace Reminder.App_Code
                         foreach (var group in mobileGroups)
                         {
                             string mobile = group.Key;
-                            string language = group.First().Field<string>("lang"); // e.g., "gu", "en", "hi"
+                            DataRow firstRow = group.First();
+                            string language = firstRow.Field<string>("lang"); // e.g., "gu", "en", "hi"
+                            string userName = GetUserName(firstRow);
 
                             List<string> animalNames = group.Select(r => r.Field<string>("animal_name")).ToList();
 
                             StringBuilder messageBuilder = new StringBuilder();
+                            messageBuilder.Append(GetPersonalizedGreeting(userName, language));
 
                             // Build message based on language
                             if (language == "GUJ") // Gujarati

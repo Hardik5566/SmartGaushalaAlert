@@ -133,7 +133,6 @@ F:\Hardik\Gaushala\SmartGaushalaAlert\bin\Debug\System.Runtime.CompilerServices.
 F:\Hardik\Gaushala\SmartGaushalaAlert\bin\Debug\System.Threading.Tasks.Extensions.xml
 F:\Hardik\Gaushala\SmartGaushalaAlert\bin\Debug\System.ValueTuple.xml
 F:\Hardik\Gaushala\SmartGaushalaAlert\obj\Debug\Reminder.csproj.AssemblyReference.cache
-F:\Hardik\Gaushala\SmartGaushalaAlert\obj\Debug\Reminder.exe.config
 F:\Hardik\Gaushala\SmartGaushalaAlert\obj\Debug\Reminder.csproj.CoreCompileInputs.cache
 F:\Hardik\Gaushala\SmartGaushalaAlert\obj\Debug\Reminder.csproj.Up2Date
 F:\Hardik\Gaushala\SmartGaushalaAlert\obj\Debug\Reminder.exe
