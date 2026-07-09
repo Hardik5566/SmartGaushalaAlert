@@ -137,3 +137,7 @@ F:\Hardik\Gaushala\SmartGaushalaAlert\obj\Debug\Reminder.csproj.CoreCompileInput
 F:\Hardik\Gaushala\SmartGaushalaAlert\obj\Debug\Reminder.csproj.Up2Date
 F:\Hardik\Gaushala\SmartGaushalaAlert\obj\Debug\Reminder.exe
 F:\Hardik\Gaushala\SmartGaushalaAlert\obj\Debug\Reminder.pdb
+F:\Hardik\Gaushala\SmartGaushalaAlert\bin\Debug\Reminder.exe.manifest
+F:\Hardik\Gaushala\SmartGaushalaAlert\bin\Debug\Reminder.application
+F:\Hardik\Gaushala\SmartGaushalaAlert\obj\Debug\Reminder.exe.manifest
+F:\Hardik\Gaushala\SmartGaushalaAlert\obj\Debug\Reminder.application
