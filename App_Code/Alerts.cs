@@ -44,6 +44,9 @@ namespace Reminder.App_Code
         private static void SendWhatsAppMessages(Dictionary<string, string> groupedMessages)
         {
             bool isFirstMessage = true;
+
+            Log("Total WhatsApp Messages : " + groupedMessages.Count);
+
             foreach (var entry in groupedMessages)
             {
                 try
@@ -51,16 +54,43 @@ namespace Reminder.App_Code
                     if (string.IsNullOrWhiteSpace(entry.Key) || string.IsNullOrWhiteSpace(entry.Value))
                         continue;
 
+                    Log("Sending To : " + entry.Key);
+
                     if (!isFirstMessage)
                         System.Threading.Thread.Sleep(3000);
 
                     isFirstMessage = false;
+
                     Whatsapp.send_text(entry.Key, entry.Value);
+
+                    Log("SUCCESS : " + entry.Key);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("[WhatsApp] Failed for " + entry.Key + ": " + ex.Message);
+                    Log("FAILED : " + entry.Key);
+                    Log(ex.ToString());
                 }
+            }
+        }
+
+        private static void Log(string message)
+        {
+            try
+            {
+                string logPath = System.IO.Path.Combine(
+                    AppDomain.CurrentDomain.BaseDirectory,
+                    "ReminderLog.txt");
+
+                System.IO.File.AppendAllText(
+                    logPath,
+                    DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") +
+                    " - " +
+                    message +
+                    Environment.NewLine);
+            }
+            catch
+            {
+                // Ignore logging errors
             }
         }
 

@@ -1,0 +1,35 @@
+09-07-2026 19:16:16 - ==================================================
+09-07-2026 19:16:16 - EXE Started
+09-07-2026 19:16:16 - India Time : 09-07-2026 19:16:16
+09-07-2026 19:16:16 - Current Hour : 19
+09-07-2026 19:16:16 - No scheduled notification for hour : 19
+09-07-2026 19:16:16 - Program Completed Successfully
+09-07-2026 19:16:16 - EXE Ended
+09-07-2026 19:17:27 - ==================================================
+09-07-2026 19:17:28 - EXE Started
+09-07-2026 19:17:28 - India Time : 09-07-2026 19:17:28
+09-07-2026 19:17:28 - Current Hour : 19
+09-07-2026 19:17:28 - No scheduled notification for hour : 19
+09-07-2026 19:17:28 - Program Completed Successfully
+09-07-2026 19:17:28 - EXE Ended
+10-07-2026 12:00:54 - ==================================================
+10-07-2026 12:00:54 - EXE Started
+10-07-2026 12:00:54 - India Time : 10-07-2026 12:00:54
+10-07-2026 12:00:54 - Current Hour : 12
+10-07-2026 12:00:54 - No scheduled notification for hour : 12
+10-07-2026 12:00:54 - Program Completed Successfully
+10-07-2026 12:00:54 - EXE Ended
+10-07-2026 12:01:28 - ==================================================
+10-07-2026 12:01:28 - EXE Started
+10-07-2026 12:01:28 - India Time : 10-07-2026 12:01:28
+10-07-2026 12:01:28 - Current Hour : 12
+10-07-2026 12:01:28 - Notification Found : Delivery
+10-07-2026 12:01:28 - Before notification.Send()
+10-07-2026 12:01:30 - Total WhatsApp Messages : 1
+10-07-2026 12:01:30 - Sending To : 9909345328
+10-07-2026 12:01:31 - SUCCESS : 9909345328
+10-07-2026 12:01:31 - After notification.Send()
+10-07-2026 12:01:32 - Delivery notification sent successfully.
+10-07-2026 12:01:32 - RunNotification Completed
+10-07-2026 12:01:32 - Program Completed Successfully
+10-07-2026 12:01:32 - EXE Ended

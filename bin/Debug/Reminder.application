@@ -7,14 +7,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Reminder.exe.manifest" size="15283">
+    <dependentAssembly dependencyType="install" codebase="Reminder.exe.manifest" size="15673">
       <assemblyIdentity name="Reminder.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZOEP35Zj/nqDzzq/aGWRl2Ht77rf6ZX2lii03yiTbL4=</dsig:DigestValue>
+        <dsig:DigestValue>YvjoVzytXbsql2wBEtlCizIJpcfvLaSHQnuNoHj50tw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

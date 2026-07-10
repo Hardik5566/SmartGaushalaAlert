@@ -150,14 +150,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reminder.exe" size="35304">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reminder.exe" size="36328">
       <assemblyIdentity name="Reminder" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>oEGn5fLRKCAY9W/S1FFJdZuDPD7mUU/T382EEKrITqk=</dsig:DigestValue>
+        <dsig:DigestValue>Deg1mv4wMREsZyVQcIWMJqjwYBAyo4pPNQF+hef1pLM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -264,6 +264,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>CNQ2vAMWRYwe1OBV6tsNAfjbBsxbTt6JXVp4yJoTQL8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="ReminderLog.txt" size="0">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

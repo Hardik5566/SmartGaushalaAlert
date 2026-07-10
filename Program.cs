@@ -1,7 +1,7 @@
 ﻿using Reminder.App_Code;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace Reminder
 {
@@ -11,7 +11,7 @@ namespace Reminder
         private static readonly Dictionary<int, ScheduledNotification> Schedule =
             new Dictionary<int, ScheduledNotification>();
 
-        // જૂના C# વર્ઝનમાં ડિક્શનરી આ રીતે સ્ટેટિક કન્સ્ટ્રક્ટરમાં ઇનિશિયલાઇઝ કરવી પડે
+        // Dictionary Initialize
         static Program()
         {
             //Schedule.Add(8, new ScheduledNotification("Health", Alerts.get_health_message));
@@ -21,38 +21,84 @@ namespace Reminder
 
         static void Main(string[] args)
         {
+            Log("==================================================");
+            Log("EXE Started");
+
             try
             {
                 TimeZoneInfo indiaTimeZone = TimeZoneInfo.FindSystemTimeZoneById("India Standard Time");
                 DateTime indiaTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, indiaTimeZone);
 
-                Console.WriteLine("[Started at " + indiaTime.ToString() + "]");
+                Log("India Time : " + indiaTime.ToString("dd-MM-yyyy HH:mm:ss"));
+                Log("Current Hour : " + indiaTime.Hour);
 
                 ScheduledNotification notification;
+
                 if (Schedule.TryGetValue(indiaTime.Hour, out notification))
                 {
-                    // એસિંક વગર સીધું જ રન કરવા માટે
+                    Log("Notification Found : " + notification.Name);
+
                     RunNotification(notification);
+
+                    Log("RunNotification Completed");
                 }
                 else
                 {
-                    Console.WriteLine("No scheduled notifications right now.");
+                    Log("No scheduled notification for hour : " + indiaTime.Hour);
                 }
 
-                Console.WriteLine("Task completed.");
+                Log("Program Completed Successfully");
+            }
+            catch (Exception ex)
+            {
+                Log("ERROR : " + ex.ToString());
             }
             finally
             {
+                Log("EXE Ended");
                 Environment.Exit(0);
             }
         }
 
         private static void RunNotification(ScheduledNotification notification)
         {
-            Console.WriteLine("Sending " + notification.Name + " Notification...");
-            notification.Send(); // Executes the assigned method
-            System.Threading.Thread.Sleep(1000); // Task.Delay ને બદલે Thread.Sleep
-            Console.WriteLine(notification.Name + " notification sent!");
+            try
+            {
+                Log("Before notification.Send()");
+
+                notification.Send();
+
+                Log("After notification.Send()");
+
+                System.Threading.Thread.Sleep(1000);
+
+                Log(notification.Name + " notification sent successfully.");
+            }
+            catch (Exception ex)
+            {
+                Log("RunNotification ERROR : " + ex.ToString());
+            }
+        }
+
+        private static void Log(string message)
+        {
+            try
+            {
+                string logPath = System.IO.Path.Combine(
+                    AppDomain.CurrentDomain.BaseDirectory,
+                    "ReminderLog.txt");
+
+                System.IO.File.AppendAllText(
+                    logPath,
+                    DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") +
+                    " - " +
+                    message +
+                    Environment.NewLine);
+            }
+            catch
+            {
+                // Ignore logging errors
+            }
         }
 
         private sealed class ScheduledNotification
@@ -66,9 +112,15 @@ namespace Reminder
                 _send = send;
             }
 
-            // જૂની રીતની પ્રોપર્ટીઝ (Getters)
-            public string Name { get { return _name; } }
-            public Action Send { get { return _send; } }
+            public string Name
+            {
+                get { return _name; }
+            }
+
+            public Action Send
+            {
+                get { return _send; }
+            }
         }
     }
 }
