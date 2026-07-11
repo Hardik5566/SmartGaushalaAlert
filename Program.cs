@@ -16,7 +16,16 @@ namespace Reminder
         {
             //Schedule.Add(8, new ScheduledNotification("Health", Alerts.get_health_message));
             //Schedule.Add(9, new ScheduledNotification("Pregnancy Check", Alerts.get_pregancy_check_message));
+            Schedule.Add(8, new ScheduledNotification("Delivery", Alerts.get_delivery_message));
+            Schedule.Add(9, new ScheduledNotification("Delivery", Alerts.get_delivery_message));
+            Schedule.Add(10, new ScheduledNotification("Delivery", Alerts.get_delivery_message));
+            Schedule.Add(11, new ScheduledNotification("Delivery", Alerts.get_delivery_message));
+            Schedule.Add(12, new ScheduledNotification("Delivery", Alerts.get_delivery_message));
             Schedule.Add(13, new ScheduledNotification("Delivery", Alerts.get_delivery_message));
+            Schedule.Add(14, new ScheduledNotification("Delivery", Alerts.get_delivery_message));
+            Schedule.Add(15, new ScheduledNotification("Delivery", Alerts.get_delivery_message));
+            Schedule.Add(16, new ScheduledNotification("Delivery", Alerts.get_delivery_message));
+            Schedule.Add(17, new ScheduledNotification("Delivery", Alerts.get_delivery_message));
         }
 
         static void Main(string[] args)

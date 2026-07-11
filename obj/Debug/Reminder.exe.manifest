@@ -150,14 +150,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reminder.exe" size="36328">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reminder.exe" size="36840">
       <assemblyIdentity name="Reminder" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Deg1mv4wMREsZyVQcIWMJqjwYBAyo4pPNQF+hef1pLM=</dsig:DigestValue>
+        <dsig:DigestValue>nNnoc0Vtl+TynMY1gAyGhEcn/9VI2Zotw8Mh3f7HKR8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
